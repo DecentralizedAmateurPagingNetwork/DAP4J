@@ -9,7 +9,6 @@ public class CallSign {
     private String description;
     private List<Pager> pagers = null;
     private List<String> ownerNames = null;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getName() {
         return name;
@@ -43,11 +42,4 @@ public class CallSign {
         this.ownerNames = ownerNames;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
 }

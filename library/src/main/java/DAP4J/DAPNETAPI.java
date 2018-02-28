@@ -28,13 +28,6 @@ public interface DAPNETAPI {
     @POST("/calls")
     Call<CallResource> postCall();
 
-    //CoreResource
-    @GET("/core")
-    Call<Version> getFullVersion();
-    @GET("/core/core_version")
-    Call<Version> getCoreVersion();
-    @GET("/core/api_version")
-    Call<Version> getApiVersion();
 
     //NewsResource
     @GET("/news")
@@ -63,6 +56,7 @@ public interface DAPNETAPI {
     Call<Rubric> putRubric(@Path("name") String name);
     @DELETE ("/rubrics/{name}")
     Call<Rubric> deleteRubric(@Path("name") String name);
+
 
     //TransmitterGroupResource
     @GET("/transmitterGroups")
@@ -93,4 +87,18 @@ public interface DAPNETAPI {
     Call<User> putUser(@Path("name") String name);
     @DELETE("/users/{name}")
     Call<User> deleteUser(@Path("name") String name);
+
+
+
+    //TransmitterControl, according to WADL?
+    @GET("/transmitterControl/sendRubricNames/{name}")
+    Call sendRubricNames(@Path("name") String name);
+    //CoreResource, according to WADL
+    @GET("/core/version")
+    Call<Version> getVersion();
+    @GET("/core/core_version")
+    Call<Version> getCoreVersion();
+    @GET("/core/api_version")
+    Call<Version> getApiVersion();
+
 }

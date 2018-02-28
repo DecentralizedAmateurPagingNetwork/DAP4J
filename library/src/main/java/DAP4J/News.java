@@ -10,7 +10,6 @@ public class News {
     private Integer number;
     private String timestamp;
     private String ownerName;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getText() {
         return text;
@@ -50,14 +49,6 @@ public class News {
 
     public void setOwnerName(String ownerName) {
         this.ownerName = ownerName;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

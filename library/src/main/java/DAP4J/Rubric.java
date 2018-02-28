@@ -11,8 +11,6 @@ public class Rubric {
     private List<String> transmitterGroupNames = null;
     private String label;
     private List<String> ownerNames = null;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
     public String getName() {
         return name;
     }
@@ -51,14 +49,6 @@ public class Rubric {
 
     public void setOwnerNames(List<String> ownerNames) {
         this.ownerNames = ownerNames;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

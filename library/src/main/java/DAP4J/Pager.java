@@ -6,7 +6,6 @@ import java.util.Map;
 public class Pager {
     private Integer number;
     private String name;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getNumber() {
         return number;
@@ -24,11 +23,4 @@ public class Pager {
         this.name = name;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
 }

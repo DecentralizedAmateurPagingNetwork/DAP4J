@@ -7,7 +7,6 @@ public class Address {
 
     private String ipAddr;
     private Integer port;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public String getIpAddr() {
         return ipAddr;
@@ -23,14 +22,6 @@ public class Address {
 
     public void setPort(Integer port) {
         this.port = port;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }
