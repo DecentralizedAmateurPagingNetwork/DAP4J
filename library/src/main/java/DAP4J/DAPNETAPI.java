@@ -89,16 +89,19 @@ public interface DAPNETAPI {
     Call<User> deleteUser(@Path("name") String name);
 
 
-
     //TransmitterControl, according to WADL?
     @GET("/transmitterControl/sendRubricNames/{name}")
     Call sendRubricNames(@Path("name") String name);
+
     //CoreResource, according to WADL
     @GET("/core/version")
     Call<Version> getVersion();
     @GET("/core/core_version")
-    Call<Version> getCoreVersion();
+    Call<SubVersion> getCoreVersion();
     @GET("/core/api_version")
-    Call<Version> getApiVersion();
+    Call<SubVersion> getApiVersion();
 
+    //Stats, according to WADL
+    @GET("/stats")
+    Call<Stats> getStats();
 }
