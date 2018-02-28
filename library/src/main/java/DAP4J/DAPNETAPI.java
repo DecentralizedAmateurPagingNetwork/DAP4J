@@ -54,5 +54,33 @@ public interface DAPNETAPI {
     @DELETE("/nodes/{name}")
     Call<Node> deleteNode(@Path("name") String name);
 
+    //RubricResource
+    @GET("/rubrics")
+    Call<List<Rubric>> getAllRubrics();
+    @GET("/rubrics/{name}")
+    Call<Rubric> getRubric(@Path("name") String name);
+    @PUT("/rubrics/{name}")
+    Call<Rubric> putRubric(@Path("name") String name);
+    @DELETE ("/rubrics/{name}")
+    Call<Rubric> deleteRubric(@Path("name") String name);
 
+    //TransmitterGroupResource
+    @GET("/transmitterGroups")
+    Call<List<TransmitterGroup>> getAllTransmitterGroups();
+    @GET("/transmitterGroups/{name}")
+    Call<TransmitterGroup> getTransmitterGroup(@Path("name") String name);
+    @PUT("/transmitterGroups/{name}")
+    Call<TransmitterGroup> putTransmitterGroup(@Path("name") String name);
+    @DELETE("/transmitterGroups/{name}")
+    Call<TransmitterGroup> deleteTransmitterGroup(@Path("name") String name);
+
+    //TransmitterResource
+    @GET("/transmitters")
+    Call<List<Transmitter>> getAllTransmitters();
+    @GET("/transmitters/{name}")
+    Call<Transmitter> getTransmitter(@Path("name") String name);
+    @PUT("/transmitters/{name}")
+    Call<Transmitter> putTransmitter(@Path("name") String name);
+    @DELETE("/transmitters/{name}")
+    Call<Transmitter> deleteTransmitter(@Path("name") String name);
 }
