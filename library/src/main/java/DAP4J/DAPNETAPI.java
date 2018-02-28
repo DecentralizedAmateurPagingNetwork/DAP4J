@@ -83,4 +83,14 @@ public interface DAPNETAPI {
     Call<Transmitter> putTransmitter(@Path("name") String name);
     @DELETE("/transmitters/{name}")
     Call<Transmitter> deleteTransmitter(@Path("name") String name);
+
+    //UserResource
+    @GET("/users")
+    Call<List<User>> getAllUsers();
+    @GET("/users/{name}")
+    Call<User> getUser(@Path("name") String name);
+    @PUT("/users/{name}")
+    Call<User> putUser(@Path("name") String name);
+    @DELETE("/users/{name}")
+    Call<User> deleteUser(@Path("name") String name);
 }
