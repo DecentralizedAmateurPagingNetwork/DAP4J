@@ -1,5 +1,3 @@
-package src.main.java.DAP4J;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,5 +1,3 @@
-package src.main.java.DAP4J;
-
 public class Version {
     private String core;
     private String api;

@@ -1,5 +1,3 @@
-package src.main.java.DAP4J;
-
 public class SubVersion {
 
     private String version;

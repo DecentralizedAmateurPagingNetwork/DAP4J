@@ -1,13 +1,12 @@
-package src.main.java.DAP4J;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CallSign {
+public class TransmitterGroup {
+
     private String name;
     private String description;
-    private List<Pager> pagers = null;
+    private List<String> transmitterNames = null;
     private List<String> ownerNames = null;
 
     public String getName() {
@@ -26,12 +25,12 @@ public class CallSign {
         this.description = description;
     }
 
-    public List<Pager> getPagers() {
-        return pagers;
+    public List<String> getTransmitterNames() {
+        return transmitterNames;
     }
 
-    public void setPagers(List<Pager> pagers) {
-        this.pagers = pagers;
+    public void setTransmitterNames(List<String> transmitterNames) {
+        this.transmitterNames = transmitterNames;
     }
 
     public List<String> getOwnerNames() {

@@ -1,5 +1,3 @@
-package src.main.java.DAP4J;
-
 public class DAPNETFactory implements java.io.Serializable {
     //private static final DAPNET SINGLETON;
 

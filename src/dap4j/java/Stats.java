@@ -1,5 +1,3 @@
-package src.main.java.DAP4J;
-
 public class Stats {
     private Integer users;
     private Integer calls;

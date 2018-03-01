@@ -1,6 +1,3 @@
-package src.main.java.DAP4J;
-
-
 public class User {
 
     private String name;
