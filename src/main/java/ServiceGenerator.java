@@ -1,3 +1,5 @@
+import okhttp3.Credentials;
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -19,8 +21,8 @@ public class ServiceGenerator {
 
     public static <S> S createService(
             Class<S> serviceClass, String username, String password) {
-        if (!TextUtils.isEmpty(username)
-                && !TextUtils.isEmpty(password)) {
+        if (!isEmpty(username)
+                && !isEmpty(password)) {
             String authToken = Credentials.basic(username, password);
             return createService(serviceClass, authToken);
         }
@@ -30,7 +32,7 @@ public class ServiceGenerator {
 
     public static <S> S createService(
             Class<S> serviceClass, final String authToken) {
-        if (!TextUtils.isEmpty(authToken)) {
+        if (!isEmpty(authToken)) {
             AuthenticationInterceptor interceptor =
                     new AuthenticationInterceptor(authToken);
 
@@ -43,5 +45,12 @@ public class ServiceGenerator {
         }
 
         return retrofit.create(serviceClass);
+    }
+
+    private static boolean isEmpty(CharSequence str){
+        if (str == null || str.length() == 0)
+            return true;
+        else
+            return false;
     }
 }
