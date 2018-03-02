@@ -5,7 +5,6 @@ public class DAPNETFactory implements java.io.Serializable {
     }
 
 
-    
     /**
      * Returns default singleton DAPNET instance.
      *
@@ -13,6 +12,6 @@ public class DAPNETFactory implements java.io.Serializable {
      * @since DAPNET4J 2.2.4
      */
     //public static DAPNET getSingleton() {
-       // return SINGLETON;
+    // return SINGLETON;
     //}
 }

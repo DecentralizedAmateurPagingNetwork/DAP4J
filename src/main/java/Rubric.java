@@ -1,6 +1,4 @@
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Rubric {
 
@@ -9,6 +7,7 @@ public class Rubric {
     private List<String> transmitterGroupNames = null;
     private String label;
     private List<String> ownerNames = null;
+
     public String getName() {
         return name;
     }
