@@ -11,7 +11,7 @@ public interface DAPNETAPI {
 
     //CallSignResource
     @GET("callsigns/{name}")
-    Call<CallSign> getCallSign(@Path("name") String name);
+    Call<List<CallSign>> getCallSign(@Path("name") String name);
 
     @PUT("callsigns/{name}")
     Call<CallSign> putCallSign(@Path("name") String name);
@@ -22,33 +22,27 @@ public interface DAPNETAPI {
     @GET("callsigns")
     Call<CallSign> getCallSign();
 
-    //models.CallResource
-    @GET("calls")
-    Call<List<CallResource>> getOwnCalls(@Query("ownerName") String name);
-
-    @GET("calls")
-    Call<List<CallResource>> getAllCalls();
+    //CallResource
+    //Call without name to get all calls (admin only)
+    @GET("calls/{ownerName}")
+    Call<List<CallResource>> getCalls(@Query("ownerName") String name);
 
     @POST("calls")
     Call<CallResource> postCall(@Body CallResource callResource);
 
 
     //NewsResource
-    @GET("news")
-    Call<List<News>> getAllNews();
-
-    @GET("news")
+    //Call without name to get all news
+    @GET("news/{rubricName}")
     Call<List<News>> getNews(@Query("rubricName") String name);
 
     @POST("news")
     Call<News> postNews(@Query("rubricName") String name, @Body News news);
 
     //NodeResource
-    @GET("nodes")
-    Call<List<Node>> getAllNodes();
-
+    //Call without name to get all nodes
     @GET("nodes/{name}")
-    Call<Node> getNode(@Path("name") String name);
+    Call<List<Node>> getNode(@Path("name") String name);
 
     @PUT("nodes/{name}")
     Call<Node> putNode(@Path("name") String name, @Body Node node);
@@ -57,11 +51,9 @@ public interface DAPNETAPI {
     Call<Node> deleteNode(@Path("name") String name);
 
     //RubricResource
-    @GET("rubrics")
-    Call<List<Rubric>> getAllRubrics();
-
+    //Call without name to get all rubrics
     @GET("rubrics/{name}")
-    Call<Rubric> getRubric(@Path("name") String name);
+    Call<List<Rubric>> getRubric(@Path("name") String name);
 
     @PUT("rubrics/{name}")
     Call<Rubric> putRubric(@Path("name") String name, @Body Rubric rubric);
@@ -71,11 +63,8 @@ public interface DAPNETAPI {
 
 
     //TransmitterGroupResource
-    @GET("transmitterGroups")
-    Call<List<TransmitterGroup>> getAllTransmitterGroups();
-
     @GET("transmitterGroups/{name}")
-    Call<TransmitterGroup> getTransmitterGroup(@Path("name") String name);
+    Call<List<TransmitterGroup>> getTransmitterGroup(@Path("name") String name);
 
     @PUT("transmitterGroups/{name}")
     Call<TransmitterGroup> putTransmitterGroup(@Path("name") String name, @Body TransmitterGroup transmitterGroup);
@@ -84,11 +73,8 @@ public interface DAPNETAPI {
     Call<TransmitterGroup> deleteTransmitterGroup(@Path("name") String name);
 
     //TransmitterResource
-    @GET("transmitters")
-    Call<List<Transmitter>> getAllTransmitters();
-
     @GET("transmitters/{name}")
-    Call<Transmitter> getTransmitter(@Path("name") String name);
+    Call<List<Transmitter>> getTransmitter(@Path("name") String name);
 
     @PUT("transmitters/{name}")
     Call<Transmitter> putTransmitter(@Path("name") String name, @Body Transmitter transmitter);
@@ -97,11 +83,8 @@ public interface DAPNETAPI {
     Call<Transmitter> deleteTransmitter(@Path("name") String name);
 
     //UserResource
-    @GET("users")
-    Call<List<User>> getAllUsers();
-
     @GET("users/{name}")
-    Call<User> getUser(@Path("name") String name);
+    Call<List<User>> getUser(@Path("name") String name);
 
     @PUT("users/{name}")
     Call<User> putUser(@Path("name") String name, @Body User user);
