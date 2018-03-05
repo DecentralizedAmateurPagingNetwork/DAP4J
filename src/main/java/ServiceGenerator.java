@@ -1,4 +1,3 @@
-import models.AuthenticationInterceptor;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -7,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
     // Trailing slash needed for resolution!
-    public static String apiBaseUrl = "https://your.api-base.url/api/";
+    private static String apiBaseUrl = "https://your.api-base.url/api/";
 
     private static Retrofit retrofit;
     private static Retrofit.Builder builder =
@@ -19,7 +18,7 @@ public class ServiceGenerator {
 
     private static HttpLoggingInterceptor logging =
             new HttpLoggingInterceptor()
-                    .setLevel(HttpLoggingInterceptor.Level.BODY);
+                    .setLevel(HttpLoggingInterceptor.Level.BASIC);
 
     private static OkHttpClient.Builder httpClient =
             new OkHttpClient.Builder();
@@ -61,6 +60,10 @@ public class ServiceGenerator {
                 httpClient.addInterceptor(interceptor);
             }
 
+        }
+        ErrorInterceptor error = new ErrorInterceptor();
+        if (!httpClient.interceptors().contains(error)) {
+            httpClient.addInterceptor(error);
         }
         if (!httpClient.interceptors().contains(logging)) {
             httpClient.addInterceptor(logging);

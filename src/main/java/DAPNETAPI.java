@@ -95,7 +95,7 @@ public interface DAPNETAPI {
 
     //TransmitterControl, according to WADL?
     @GET("transmitterControl/sendRubricNames/{name}")
-    Call sendRubricNames(@Path("name") String name);
+    Call<Void> sendRubricNames(@Path("name") String name);
 
     //CoreResource, according to WADL
     @GET("core/version")
