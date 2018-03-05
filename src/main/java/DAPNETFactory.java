@@ -5,7 +5,7 @@ public class DAPNETFactory implements java.io.Serializable {
     }
 
 
-    /**
+    /*
      * Returns default singleton DAPNET instance.
      *
      * @return default singleton DAPNET instance

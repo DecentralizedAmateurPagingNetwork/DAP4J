@@ -1,3 +1,5 @@
+package models;
+
 public class Pager {
     private Integer number;
     private String name;

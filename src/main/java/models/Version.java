@@ -1,3 +1,5 @@
+package models;
+
 public class Version {
     private String core;
     private String api;

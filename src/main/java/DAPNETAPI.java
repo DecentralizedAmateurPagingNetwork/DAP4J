@@ -1,3 +1,4 @@
+import models.*;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -5,125 +6,125 @@ import java.util.List;
 
 public interface DAPNETAPI {
     //ActivationResource
-    @POST("/activation")
+    @POST("activation")
     Call<Activation> postActivation();
 
     //CallSignResource
-    @GET("/callsigns/{name}")
+    @GET("callsigns/{name}")
     Call<CallSign> getCallSign(@Path("name") String name);
 
-    @PUT("/callsigns/{name}")
+    @PUT("callsigns/{name}")
     Call<CallSign> putCallSign(@Path("name") String name);
 
-    @DELETE("/callsigns/{name}")
+    @DELETE("callsigns/{name}")
     Call<CallSign> deleteCallSign(@Path("name") String name);
 
-    @GET("/callsigns")
+    @GET("callsigns")
     Call<CallSign> getCallSign();
 
-    //CallResource
-    @GET("/calls")
+    //models.CallResource
+    @GET("calls")
     Call<List<CallResource>> getOwnCalls(@Query("ownerName") String name);
 
-    @GET("/calls")
+    @GET("calls")
     Call<List<CallResource>> getAllCalls();
 
-    @POST("/calls")
+    @POST("calls")
     Call<CallResource> postCall();
 
 
     //NewsResource
-    @GET("/news")
+    @GET("news")
     Call<List<News>> getAllNews();
 
-    @GET("/news")
+    @GET("news")
     Call<List<News>> getNews(@Query("rubricName") String name);
 
-    @POST("/news")
+    @POST("news")
     Call<News> postNews(@Query("rubricName") String name);
 
     //NodeResource
-    @GET("/nodes")
+    @GET("nodes")
     Call<List<Node>> getAllNodes();
 
-    @GET("/nodes/{name}")
+    @GET("nodes/{name}")
     Call<Node> getNode(@Path("name") String name);
 
-    @PUT("/nodes/{name}")
+    @PUT("nodes/{name}")
     Call<Node> putNode(@Path("name") String name);
 
-    @DELETE("/nodes/{name}")
+    @DELETE("nodes/{name}")
     Call<Node> deleteNode(@Path("name") String name);
 
     //RubricResource
-    @GET("/rubrics")
+    @GET("rubrics")
     Call<List<Rubric>> getAllRubrics();
 
-    @GET("/rubrics/{name}")
+    @GET("rubrics/{name}")
     Call<Rubric> getRubric(@Path("name") String name);
 
-    @PUT("/rubrics/{name}")
+    @PUT("rubrics/{name}")
     Call<Rubric> putRubric(@Path("name") String name);
 
-    @DELETE("/rubrics/{name}")
+    @DELETE("rubrics/{name}")
     Call<Rubric> deleteRubric(@Path("name") String name);
 
 
     //TransmitterGroupResource
-    @GET("/transmitterGroups")
+    @GET("transmitterGroups")
     Call<List<TransmitterGroup>> getAllTransmitterGroups();
 
-    @GET("/transmitterGroups/{name}")
+    @GET("transmitterGroups/{name}")
     Call<TransmitterGroup> getTransmitterGroup(@Path("name") String name);
 
-    @PUT("/transmitterGroups/{name}")
+    @PUT("transmitterGroups/{name}")
     Call<TransmitterGroup> putTransmitterGroup(@Path("name") String name);
 
-    @DELETE("/transmitterGroups/{name}")
+    @DELETE("transmitterGroups/{name}")
     Call<TransmitterGroup> deleteTransmitterGroup(@Path("name") String name);
 
     //TransmitterResource
-    @GET("/transmitters")
+    @GET("transmitters")
     Call<List<Transmitter>> getAllTransmitters();
 
-    @GET("/transmitters/{name}")
+    @GET("transmitters/{name}")
     Call<Transmitter> getTransmitter(@Path("name") String name);
 
-    @PUT("/transmitters/{name}")
+    @PUT("transmitters/{name}")
     Call<Transmitter> putTransmitter(@Path("name") String name);
 
-    @DELETE("/transmitters/{name}")
+    @DELETE("transmitters/{name}")
     Call<Transmitter> deleteTransmitter(@Path("name") String name);
 
     //UserResource
-    @GET("/users")
+    @GET("users")
     Call<List<User>> getAllUsers();
 
-    @GET("/users/{name}")
+    @GET("users/{name}")
     Call<User> getUser(@Path("name") String name);
 
-    @PUT("/users/{name}")
+    @PUT("users/{name}")
     Call<User> putUser(@Path("name") String name);
 
-    @DELETE("/users/{name}")
+    @DELETE("users/{name}")
     Call<User> deleteUser(@Path("name") String name);
 
 
     //TransmitterControl, according to WADL?
-    @GET("/transmitterControl/sendRubricNames/{name}")
+    @GET("transmitterControl/sendRubricNames/{name}")
     Call sendRubricNames(@Path("name") String name);
 
     //CoreResource, according to WADL
-    @GET("/core/version")
+    @GET("core/version")
     Call<Version> getVersion();
 
-    @GET("/core/core_version")
+    @GET("core/core_version")
     Call<SubVersion> getCoreVersion();
 
-    @GET("/core/api_version")
+    @GET("core/api_version")
     Call<SubVersion> getApiVersion();
 
-    //Stats, according to WADL
-    @GET("/stats")
+    //models.Stats, according to WADL
+    @GET("stats")
     Call<Stats> getStats();
 }

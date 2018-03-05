@@ -1,3 +1,5 @@
+package models;
+
 public class Stats {
     private Integer users;
     private Integer calls;
