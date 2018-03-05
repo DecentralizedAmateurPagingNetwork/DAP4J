@@ -41,4 +41,10 @@ public class TransmitterGroup {
         this.ownerNames = ownerNames;
     }
 
+    public TransmitterGroup(String name, String description, List<String> transmitterNames, List<String> ownerNames) {
+        this.name = name;
+        this.description = description;
+        this.transmitterNames = transmitterNames;
+        this.ownerNames = ownerNames;
+    }
 }

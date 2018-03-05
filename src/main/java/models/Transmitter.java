@@ -95,5 +95,40 @@ public class Transmitter {
         this.status = status;
     }
 
+    public Transmitter(String name, String longitude, String latitude, String power, String nodeName, Address address, String timeSlot, List<String> ownerNames, String deviceType, String status) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.power = power;
+        this.nodeName = nodeName;
+        this.address = address;
+        this.timeSlot = timeSlot;
+        this.ownerNames = ownerNames;
+        this.deviceType = deviceType;
+        this.status = status;
+    }
 
+    public Transmitter(String name, String longitude, String latitude, String power, String nodeName, String timeSlot, List<String> ownerNames, String deviceType, String status) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.power = power;
+        this.nodeName = nodeName;
+        this.timeSlot = timeSlot;
+        this.ownerNames = ownerNames;
+        this.deviceType = deviceType;
+        this.status = status;
+    }
+
+    public Transmitter(String name, String longitude, String latitude, String power, String nodeName, Address address, String timeSlot, List<String> ownerNames, String deviceType) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.power = power;
+        this.nodeName = nodeName;
+        this.address = address;
+        this.timeSlot = timeSlot;
+        this.ownerNames = ownerNames;
+        this.deviceType = deviceType;
+    }
 }

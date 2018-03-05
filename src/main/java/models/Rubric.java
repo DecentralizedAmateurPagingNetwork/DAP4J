@@ -50,4 +50,11 @@ public class Rubric {
         this.ownerNames = ownerNames;
     }
 
+    public Rubric(String name, Integer number, List<String> transmitterGroupNames, String label, List<String> ownerNames) {
+        this.name = name;
+        this.number = number;
+        this.transmitterGroupNames = transmitterGroupNames;
+        this.label = label;
+        this.ownerNames = ownerNames;
+    }
 }

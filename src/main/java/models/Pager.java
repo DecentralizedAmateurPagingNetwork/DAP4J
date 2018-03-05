@@ -20,4 +20,8 @@ public class Pager {
         this.name = name;
     }
 
+    public Pager(Integer number, String name) {
+        this.number = number;
+        this.name = name;
+    }
 }

@@ -40,4 +40,16 @@ public class CallSign {
         this.ownerNames = ownerNames;
     }
 
+    public CallSign(String name, String description, List<Pager> pagers, List<String> ownerNames) {
+        this.name = name;
+        this.description = description;
+        this.pagers = pagers;
+        this.ownerNames = ownerNames;
+    }
+
+    public CallSign(String name, String description, List<String> ownerNames) {
+        this.name = name;
+        this.description = description;
+        this.ownerNames = ownerNames;
+    }
 }

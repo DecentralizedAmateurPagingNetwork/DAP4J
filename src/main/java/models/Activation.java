@@ -36,4 +36,15 @@ public class Activation {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
+
+    public Activation(Integer number, List<String> transmitterGroupNames, String timestamp) {
+        this.number = number;
+        this.transmitterGroupNames = transmitterGroupNames;
+        this.timestamp = timestamp;
+    }
+
+    public Activation(Integer number, List<String> transmitterGroupNames) {
+        this.number = number;
+        this.transmitterGroupNames = transmitterGroupNames;
+    }
 }

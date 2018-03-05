@@ -57,5 +57,27 @@ public class Node {
         this.key = key;
     }
 
+    public Node(String name, String longitude, String latitude, Address address, String status, String key) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.address = address;
+        this.status = status;
+        this.key = key;
+    }
 
+    public Node(String name, String longitude, String latitude, String status, String key) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.status = status;
+        this.key = key;
+    }
+
+    public Node(String name, String longitude, String latitude, String status) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.status = status;
+    }
 }

@@ -100,4 +100,18 @@ public class Stats {
     public void setTransmittersOnline(Integer transmittersOnline) {
         this.transmittersOnline = transmittersOnline;
     }
+
+    public Stats(Integer users, Integer calls, Integer callsTotal, Integer callSigns, Integer news, Integer newsTotal, Integer rubrics, Integer nodesTotal, Integer nodesOnline, Integer transmittersTotal, Integer transmittersOnline) {
+        this.users = users;
+        this.calls = calls;
+        this.callsTotal = callsTotal;
+        this.callSigns = callSigns;
+        this.news = news;
+        this.newsTotal = newsTotal;
+        this.rubrics = rubrics;
+        this.nodesTotal = nodesTotal;
+        this.nodesOnline = nodesOnline;
+        this.transmittersTotal = transmittersTotal;
+        this.transmittersOnline = transmittersOnline;
+    }
 }

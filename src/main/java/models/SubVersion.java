@@ -11,4 +11,8 @@ public class SubVersion {
     public void setVersion(String version) {
         this.version = version;
     }
+
+    public SubVersion(String version) {
+        this.version = version;
+    }
 }

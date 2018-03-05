@@ -59,5 +59,19 @@ public class CallResource {
         this.ownerName = ownerName;
     }
 
+    public CallResource(String text, List<String> callSignNames, List<String> transmitterGroupNames, Boolean emergency, String timestamp, String ownerName) {
+        this.text = text;
+        this.callSignNames = callSignNames;
+        this.transmitterGroupNames = transmitterGroupNames;
+        this.emergency = emergency;
+        this.timestamp = timestamp;
+        this.ownerName = ownerName;
+    }
 
+    public CallResource(String text, List<String> callSignNames, List<String> transmitterGroupNames, Boolean emergency) {
+        this.text = text;
+        this.callSignNames = callSignNames;
+        this.transmitterGroupNames = transmitterGroupNames;
+        this.emergency = emergency;
+    }
 }

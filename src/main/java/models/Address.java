@@ -21,4 +21,8 @@ public class Address {
         this.port = port;
     }
 
+    public Address(String ipAddr, Integer port) {
+        this.ipAddr = ipAddr;
+        this.port = port;
+    }
 }

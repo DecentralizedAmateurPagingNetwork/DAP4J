@@ -48,4 +48,17 @@ public class News {
         this.ownerName = ownerName;
     }
 
+    public News(String text, String rubricName, Integer number, String timestamp, String ownerName) {
+        this.text = text;
+        this.rubricName = rubricName;
+        this.number = number;
+        this.timestamp = timestamp;
+        this.ownerName = ownerName;
+    }
+
+    public News(String text, String rubricName, Integer number) {
+        this.text = text;
+        this.rubricName = rubricName;
+        this.number = number;
+    }
 }

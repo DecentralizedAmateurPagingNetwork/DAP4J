@@ -20,4 +20,8 @@ public class Version {
         this.api = api;
     }
 
+    public Version(String core, String api) {
+        this.core = core;
+        this.api = api;
+    }
 }
