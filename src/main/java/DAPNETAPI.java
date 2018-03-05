@@ -7,7 +7,7 @@ import java.util.List;
 public interface DAPNETAPI {
     //ActivationResource
     @POST("activation")
-    Call<Activation> postActivation();
+    Call<Activation> postActivation(@Body Activation activation);
 
     //CallSignResource
     @GET("callsigns/{name}")
@@ -30,7 +30,7 @@ public interface DAPNETAPI {
     Call<List<CallResource>> getAllCalls();
 
     @POST("calls")
-    Call<CallResource> postCall();
+    Call<CallResource> postCall(@Body CallResource callResource);
 
 
     //NewsResource
@@ -41,7 +41,7 @@ public interface DAPNETAPI {
     Call<List<News>> getNews(@Query("rubricName") String name);
 
     @POST("news")
-    Call<News> postNews(@Query("rubricName") String name);
+    Call<News> postNews(@Query("rubricName") String name, @Body News news);
 
     //NodeResource
     @GET("nodes")
@@ -51,7 +51,7 @@ public interface DAPNETAPI {
     Call<Node> getNode(@Path("name") String name);
 
     @PUT("nodes/{name}")
-    Call<Node> putNode(@Path("name") String name);
+    Call<Node> putNode(@Path("name") String name, @Body Node node);
 
     @DELETE("nodes/{name}")
     Call<Node> deleteNode(@Path("name") String name);
@@ -64,7 +64,7 @@ public interface DAPNETAPI {
     Call<Rubric> getRubric(@Path("name") String name);
 
     @PUT("rubrics/{name}")
-    Call<Rubric> putRubric(@Path("name") String name);
+    Call<Rubric> putRubric(@Path("name") String name, @Body Rubric rubric);
 
     @DELETE("rubrics/{name}")
     Call<Rubric> deleteRubric(@Path("name") String name);
@@ -78,7 +78,7 @@ public interface DAPNETAPI {
     Call<TransmitterGroup> getTransmitterGroup(@Path("name") String name);
 
     @PUT("transmitterGroups/{name}")
-    Call<TransmitterGroup> putTransmitterGroup(@Path("name") String name);
+    Call<TransmitterGroup> putTransmitterGroup(@Path("name") String name, @Body TransmitterGroup transmitterGroup);
 
     @DELETE("transmitterGroups/{name}")
     Call<TransmitterGroup> deleteTransmitterGroup(@Path("name") String name);
@@ -91,7 +91,7 @@ public interface DAPNETAPI {
     Call<Transmitter> getTransmitter(@Path("name") String name);
 
     @PUT("transmitters/{name}")
-    Call<Transmitter> putTransmitter(@Path("name") String name);
+    Call<Transmitter> putTransmitter(@Path("name") String name, @Body Transmitter transmitter);
 
     @DELETE("transmitters/{name}")
     Call<Transmitter> deleteTransmitter(@Path("name") String name);
@@ -104,7 +104,7 @@ public interface DAPNETAPI {
     Call<User> getUser(@Path("name") String name);
 
     @PUT("users/{name}")
-    Call<User> putUser(@Path("name") String name);
+    Call<User> putUser(@Path("name") String name, @Body User user);
 
     @DELETE("users/{name}")
     Call<User> deleteUser(@Path("name") String name);
