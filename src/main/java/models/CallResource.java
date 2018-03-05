@@ -5,8 +5,8 @@ import java.util.List;
 public class CallResource {
 
     private String text;
-    private List<String> callSignNames = null;
-    private List<String> transmitterGroupNames = null;
+    private List<String> callSignNames;
+    private List<String> transmitterGroupNames;
     private Boolean emergency;
     private String timestamp;
     private String ownerName;

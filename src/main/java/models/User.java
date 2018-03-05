@@ -31,6 +31,14 @@ public class User {
         this.admin = admin;
     }
 
+    public String getHash_pass() {
+        return hash_pass;
+    }
+
+    public void setHash_pass(String hash_pass) {
+        this.hash_pass = hash_pass;
+    }
+
     public User(String name, String mail, Boolean admin, String hash_pass) {
         this.name = name;
         this.mail = mail;

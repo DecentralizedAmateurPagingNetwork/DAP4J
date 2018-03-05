@@ -6,9 +6,9 @@ public class Rubric {
 
     private String name;
     private Integer number;
-    private List<String> transmitterGroupNames = null;
+    private List<String> transmitterGroupNames;
     private String label;
-    private List<String> ownerNames = null;
+    private List<String> ownerNames;
 
     public String getName() {
         return name;

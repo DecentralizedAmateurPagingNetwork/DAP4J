@@ -5,8 +5,8 @@ import java.util.List;
 public class CallSign {
     private String name;
     private String description;
-    private List<Pager> pagers = null;
-    private List<String> ownerNames = null;
+    private List<Pager> pagers;
+    private List<String> ownerNames;
 
     public String getName() {
         return name;

@@ -8,7 +8,7 @@ public class Activation {
     private Integer number;
     //@SerializedName("transmitterGroupNames")
     //@Expose
-    private List<String> transmitterGroupNames = null;
+    private List<String> transmitterGroupNames;
     //@SerializedName("timestamp")
     //@Expose
     private String timestamp;

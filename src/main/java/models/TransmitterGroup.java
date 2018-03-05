@@ -6,8 +6,8 @@ public class TransmitterGroup {
 
     private String name;
     private String description;
-    private List<String> transmitterNames = null;
-    private List<String> ownerNames = null;
+    private List<String> transmitterNames;
+    private List<String> ownerNames;
 
     public String getName() {
         return name;
