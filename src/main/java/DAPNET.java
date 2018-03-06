@@ -1,2 +1,5 @@
-public interface DAPNET extends java.io.Serializable {
+public final class DAPNET {
+    private DAPNET() {
+
+    }
 }

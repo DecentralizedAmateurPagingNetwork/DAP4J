@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
     // Trailing slash needed for resolution!
-    private static String apiBaseUrl = "https://your.api-base.url/api/";
+    private static String apiBaseUrl = "https://hampager.de";
 
     private static Retrofit retrofit;
     private static Retrofit.Builder builder =
