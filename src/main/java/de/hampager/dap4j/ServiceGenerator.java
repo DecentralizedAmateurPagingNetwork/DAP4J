@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
     // Trailing slash needed for resolution!
-    private static String apiBaseUrl = "https://de.dap4j.hampager.de";
+    private static String apiBaseUrl = "http://hampager.de/api";
 
     private static Retrofit retrofit;
     private static Retrofit.Builder builder =
@@ -25,17 +25,7 @@ public class ServiceGenerator {
     private static OkHttpClient.Builder httpClient =
             new OkHttpClient.Builder();
 
-    // No need to instantiate this class.
-    private ServiceGenerator() {
-    }
 
-    public static void changeApiBaseUrl(String newApiBaseUrl) {
-        apiBaseUrl = newApiBaseUrl;
-
-        builder = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(apiBaseUrl);
-    }
 
     public static <S> S createService(Class<S> serviceClass) {
         return createService(serviceClass, null, null);
@@ -75,7 +65,31 @@ public class ServiceGenerator {
         return retrofit.create(serviceClass);
     }
 
+    // No need to instantiate this class.
+    private ServiceGenerator() {
+    }
+
+    public static DAPNETAPI createService() {
+        return createService(DAPNETAPI.class);
+    }
+
+    public static DAPNETAPI createService(String username, String password) {
+        return createService(DAPNETAPI.class, username, password);
+    }
+
+    public static DAPNETAPI createService(String authToken) {
+        return createService(DAPNETAPI.class, authToken);
+    }
+
+    public static void changeApiBaseUrl(String newApiBaseUrl) {
+        apiBaseUrl = newApiBaseUrl;
+
+        builder = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(apiBaseUrl);
+    }
     private static boolean isEmpty(CharSequence str) {
         return str == null || str.length() == 0;
     }
+
 }
