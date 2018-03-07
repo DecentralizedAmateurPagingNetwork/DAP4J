@@ -1,6 +1,6 @@
-package de.dap4j.hampager;
+package de.hampager.dap4j;
 
-import de.dap4j.hampager.models.*;
+import de.hampager.dap4j.models.*;
 import retrofit2.Call;
 import retrofit2.http.*;
 

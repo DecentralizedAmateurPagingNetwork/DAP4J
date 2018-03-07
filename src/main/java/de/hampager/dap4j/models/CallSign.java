@@ -1,12 +1,11 @@
-package de.dap4j.hampager.models;
+package de.hampager.dap4j.models;
 
 import java.util.List;
 
-public class TransmitterGroup {
-
+public class CallSign {
     private String name;
     private String description;
-    private List<String> transmitterNames;
+    private List<Pager> pagers;
     private List<String> ownerNames;
 
     public String getName() {
@@ -25,12 +24,12 @@ public class TransmitterGroup {
         this.description = description;
     }
 
-    public List<String> getTransmitterNames() {
-        return transmitterNames;
+    public List<Pager> getPagers() {
+        return pagers;
     }
 
-    public void setTransmitterNames(List<String> transmitterNames) {
-        this.transmitterNames = transmitterNames;
+    public void setPagers(List<Pager> pagers) {
+        this.pagers = pagers;
     }
 
     public List<String> getOwnerNames() {
@@ -41,10 +40,16 @@ public class TransmitterGroup {
         this.ownerNames = ownerNames;
     }
 
-    public TransmitterGroup(String name, String description, List<String> transmitterNames, List<String> ownerNames) {
+    public CallSign(String name, String description, List<Pager> pagers, List<String> ownerNames) {
         this.name = name;
         this.description = description;
-        this.transmitterNames = transmitterNames;
+        this.pagers = pagers;
+        this.ownerNames = ownerNames;
+    }
+
+    public CallSign(String name, String description, List<String> ownerNames) {
+        this.name = name;
+        this.description = description;
         this.ownerNames = ownerNames;
     }
 }

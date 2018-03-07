@@ -1,4 +1,4 @@
-package de.dap4j.hampager;
+package de.hampager.dap4j;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;

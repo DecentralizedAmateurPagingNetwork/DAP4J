@@ -1,4 +1,4 @@
-package de.dap4j.hampager.models;
+package de.hampager.dap4j.models;
 
 public class Version {
     private String core;
