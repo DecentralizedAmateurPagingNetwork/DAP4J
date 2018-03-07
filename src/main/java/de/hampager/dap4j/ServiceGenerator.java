@@ -10,7 +10,7 @@ public class ServiceGenerator {
     // Trailing slash needed for resolution!
     private static String apiBaseUrl = "http://hampager.de/api";
 
-    private static Retrofit retrofit;
+    public static Retrofit retrofit;
     private static Retrofit.Builder builder =
             new Retrofit.Builder()
                     .baseUrl(apiBaseUrl)
