@@ -1,5 +1,8 @@
 package de.hampager.dap4j.models;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class Stats {
     private Integer users;
     private Integer calls;
@@ -113,5 +116,21 @@ public class Stats {
         this.nodesOnline = nodesOnline;
         this.transmittersTotal = transmittersTotal;
         this.transmittersOnline = transmittersOnline;
+    }
+
+    public Map<String, Integer> getStats() {
+        LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+        map.put("Users", users);
+        map.put("Calls", calls);
+        map.put("CallsTotal", callsTotal);
+        map.put("Callsigns", callSigns);
+        map.put("News", news);
+        map.put("NewsTotal", newsTotal);
+        map.put("Rubrics", rubrics);
+        map.put("Nodes", nodesTotal);
+        map.put("NodesUp", nodesOnline);
+        map.put("Transmitters", transmittersTotal);
+        map.put("TransmittersUp", transmittersOnline);
+        return map;
     }
 }
