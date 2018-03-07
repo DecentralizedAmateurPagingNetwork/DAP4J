@@ -1,3 +1,5 @@
+package de.dap4j.hampager;
+
 public class APIError {
     private int statusCode;
     private String message;

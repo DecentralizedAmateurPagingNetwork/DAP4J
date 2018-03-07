@@ -1,3 +1,5 @@
+package de.dap4j.hampager;
+
 public class DAPNETFactory implements java.io.Serializable {
     //private static final DAPNET SINGLETON;
 

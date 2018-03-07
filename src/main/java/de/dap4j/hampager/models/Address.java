@@ -1,4 +1,4 @@
-package models;
+package de.dap4j.hampager.models;
 
 public class Address {
 

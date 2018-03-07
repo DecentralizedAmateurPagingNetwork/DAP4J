@@ -1,4 +1,4 @@
-group 'de.hampager'
+group 'de.de.dap4j.hampager'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'

@@ -1,4 +1,4 @@
-package callbacks;
+package de.dap4j.hampager.callbacks;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

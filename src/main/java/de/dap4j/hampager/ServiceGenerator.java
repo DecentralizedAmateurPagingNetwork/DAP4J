@@ -1,3 +1,5 @@
+package de.dap4j.hampager;
+
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -6,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
     // Trailing slash needed for resolution!
-    private static String apiBaseUrl = "https://hampager.de";
+    private static String apiBaseUrl = "https://de.dap4j.hampager.de";
 
     private static Retrofit retrofit;
     private static Retrofit.Builder builder =
