@@ -3,17 +3,28 @@ package de.hampager.dap4j.models;
 import java.util.List;
 
 public class Transmitter {
-
     private String name;
+    private String authKey;
     private String longitude;
     private String latitude;
     private String power;
     private String nodeName;
     private Address address;
     private String timeSlot;
-    private List<String> ownerNames;
+    private List<String> ownerNames = null;
     private String deviceType;
+    private String deviceVersion;
+    private Integer callCount;
     private String status;
+    private Integer antennaAboveGroundLevel;
+    private String antennaType;
+    private Integer antennaDirection;
+    private Integer antennaGainDbi;
+    private String lastUpdate;
+    private String usage;
+    private Integer identificationAddress;
+    private String lastConnected;
+    private String connectedSince;
 
     public String getName() {
         return name;
@@ -21,6 +32,14 @@ public class Transmitter {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getAuthKey() {
+        return authKey;
+    }
+
+    public void setAuthKey(String authKey) {
+        this.authKey = authKey;
     }
 
     public String getLongitude() {
@@ -87,6 +106,22 @@ public class Transmitter {
         this.deviceType = deviceType;
     }
 
+    public String getDeviceVersion() {
+        return deviceVersion;
+    }
+
+    public void setDeviceVersion(String deviceVersion) {
+        this.deviceVersion = deviceVersion;
+    }
+
+    public Integer getCallCount() {
+        return callCount;
+    }
+
+    public void setCallCount(Integer callCount) {
+        this.callCount = callCount;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -95,40 +130,76 @@ public class Transmitter {
         this.status = status;
     }
 
-    public Transmitter(String name, String longitude, String latitude, String power, String nodeName, Address address, String timeSlot, List<String> ownerNames, String deviceType, String status) {
-        this.name = name;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.power = power;
-        this.nodeName = nodeName;
-        this.address = address;
-        this.timeSlot = timeSlot;
-        this.ownerNames = ownerNames;
-        this.deviceType = deviceType;
-        this.status = status;
+    public Integer getAntennaAboveGroundLevel() {
+        return antennaAboveGroundLevel;
     }
 
-    public Transmitter(String name, String longitude, String latitude, String power, String nodeName, String timeSlot, List<String> ownerNames, String deviceType, String status) {
-        this.name = name;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.power = power;
-        this.nodeName = nodeName;
-        this.timeSlot = timeSlot;
-        this.ownerNames = ownerNames;
-        this.deviceType = deviceType;
-        this.status = status;
+    public void setAntennaAboveGroundLevel(Integer antennaAboveGroundLevel) {
+        this.antennaAboveGroundLevel = antennaAboveGroundLevel;
     }
 
-    public Transmitter(String name, String longitude, String latitude, String power, String nodeName, Address address, String timeSlot, List<String> ownerNames, String deviceType) {
-        this.name = name;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.power = power;
-        this.nodeName = nodeName;
-        this.address = address;
-        this.timeSlot = timeSlot;
-        this.ownerNames = ownerNames;
-        this.deviceType = deviceType;
+    public String getAntennaType() {
+        return antennaType;
     }
+
+    public void setAntennaType(String antennaType) {
+        this.antennaType = antennaType;
+    }
+
+    public Integer getAntennaDirection() {
+        return antennaDirection;
+    }
+
+    public void setAntennaDirection(Integer antennaDirection) {
+        this.antennaDirection = antennaDirection;
+    }
+
+    public Integer getAntennaGainDbi() {
+        return antennaGainDbi;
+    }
+
+    public void setAntennaGainDbi(Integer antennaGainDbi) {
+        this.antennaGainDbi = antennaGainDbi;
+    }
+
+    public String getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(String lastUpdate) {
+        this.lastUpdate = lastUpdate;
+    }
+
+    public String getUsage() {
+        return usage;
+    }
+
+    public void setUsage(String usage) {
+        this.usage = usage;
+    }
+
+    public Integer getIdentificationAddress() {
+        return identificationAddress;
+    }
+
+    public void setIdentificationAddress(Integer identificationAddress) {
+        this.identificationAddress = identificationAddress;
+    }
+
+    public String getLastConnected() {
+        return lastConnected;
+    }
+
+    public void setLastConnected(String lastConnected) {
+        this.lastConnected = lastConnected;
+    }
+
+    public String getConnectedSince() {
+        return connectedSince;
+    }
+
+    public void setConnectedSince(String connectedSince) {
+        this.connectedSince = connectedSince;
+    }
+
 }
