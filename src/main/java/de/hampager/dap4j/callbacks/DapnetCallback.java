@@ -1,12 +1,7 @@
 package de.hampager.dap4j.callbacks;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Response;
+import retrofit2.Callback;
 
-public interface DapnetCallback {
-
-    void onResponse(Call<ResponseBody> call, Response<ResponseBody> response);
-
-    void onFailure(Call<ResponseBody> call, Throwable t);
+public abstract class DapnetCallback<T> implements Callback<T> {
+    
 }
