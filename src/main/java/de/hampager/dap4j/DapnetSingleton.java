@@ -11,7 +11,7 @@ public class DapnetSingleton {
     private DapnetSingleton() {
     }
 
-    public static DapnetSingleton getInstance() {
+    public static synchronized DapnetSingleton getInstance() {
         if (DapnetSingleton.uniqueDapnet == null) {
             DapnetSingleton.uniqueDapnet = new DapnetSingleton();
             DapnetSingleton.uniqueDapnet.init();
@@ -31,5 +31,9 @@ public class DapnetSingleton {
         this.url = url;
         this.user = user;
         this.pass = pass;
+    }
+
+    public DAPNETAPI getService() {
+        return DapnetSingleton.service;
     }
 }
