@@ -2,7 +2,7 @@ package de.hampager.dap4j;
 
 public class DAPNET {
     // unique instance
-    private static DAPNET uniqueDapnet = new DAPNET();
+    private static DAPNET uniqueDapnet;
     private DAPNETAPI dapnetapi = ServiceGenerator.createService();
     private String url;
     private String username;
@@ -13,7 +13,10 @@ public class DAPNET {
     }
 
     // global method to retrieve instance
-    public static DAPNET getInstance() {
+    public static synchronized DAPNET getInstance() {
+        if (DAPNET.uniqueDapnet == null) {
+            DAPNET.uniqueDapnet = new DAPNET();
+        }
         return uniqueDapnet;
     }
 
