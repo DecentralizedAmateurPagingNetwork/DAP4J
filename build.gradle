@@ -1,5 +1,5 @@
-group 'de.de.dap4j.hampager'
-version '1.0-SNAPSHOT'
+group 'de.dap4j.hampager'
+version '0.1'
 
 apply plugin: 'java'
 apply plugin: 'java-library'
