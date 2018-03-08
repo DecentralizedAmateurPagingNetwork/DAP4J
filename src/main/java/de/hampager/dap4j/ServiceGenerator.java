@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
     // Trailing slash needed for resolution!
-    private static String apiBaseUrl = "http://hampager.de/api";
+    private static String apiBaseUrl = "http://hampager.de/api/";
 
     public static Retrofit retrofit;
     private static Retrofit.Builder builder =
@@ -73,6 +73,10 @@ public class ServiceGenerator {
         return createService(DAPNETAPI.class);
     }
 
+    public static DAPNETAPI createService(String url, String username, String password) {
+        changeApiBaseUrl(url);
+        return createService(username, password);
+    }
     public static DAPNETAPI createService(String username, String password) {
         return createService(DAPNETAPI.class, username, password);
     }

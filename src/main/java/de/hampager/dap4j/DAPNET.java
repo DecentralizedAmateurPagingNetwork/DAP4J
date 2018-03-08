@@ -1,6 +1,9 @@
 package de.hampager.dap4j;
 
 public class DAPNET {
+    private static String dn_url;
+    private static String dn_user;
+    private static String dn_password;
     // unique instance
     private static DAPNET uniqueDapnet;
     private DAPNETAPI dapnetapi = ServiceGenerator.createService();
