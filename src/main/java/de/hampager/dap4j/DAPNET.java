@@ -19,7 +19,7 @@ public class DAPNET {
         call.enqueue(new Callback<E>() {
             @Override
             public void onResponse(Call<E> call, Response<E> response) {
-                listener.onResponse(new DapnetResponse<>(response.body()));
+                listener.onResponse(new DapnetResponse<>(response.body(), response.isSuccessful()));
             }
 
             @Override
