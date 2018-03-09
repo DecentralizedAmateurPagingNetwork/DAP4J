@@ -12,11 +12,15 @@ public interface DAPNETAPI {
     Call<Activation> postActivation(@Body Activation activation);
 
     //CallSignResource
-    @GET("callsigns/{name}")
-    Call<List<CallSign>> getCallSign(@Path("name") String name);
+    @GET("callsigns/")
+    Call<List<CallSign>> getAllCallSigns();
 
+    @GET("callsigns/{name}")
+    Call<CallSign> getCallSign(@Path("name") String name);
+
+    //TODO: JSONBODY HINZUFÜGEN
     @PUT("callsigns/{name}")
-    Call<CallSign> putCallSign(@Path("name") String name);
+    Call<CallSign> putCallSign(@Body CallSign callSign);
 
     @DELETE("callsigns/{name}")
     Call<CallSign> deleteCallSign(@Path("name") String name);
