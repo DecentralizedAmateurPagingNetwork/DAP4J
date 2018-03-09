@@ -20,10 +20,10 @@ public interface DAPNETAPI {
 
     //TODO: JSONBODY HINZUFÜGEN
     @PUT("callsigns/{name}")
-    Call<CallSign> putCallSign(@Body CallSign callSign);
+    Call<CallSign> putCallSign(@Path("name") String name, @Body CallSign callSign);
 
     @DELETE("callsigns/{name}")
-    Call<CallSign> deleteCallSign(@Path("name") String name);
+    Call<Void> deleteCallSign(@Path("name") String name);
 
     @GET("callsigns")
     Call<CallSign> getCallSign();
@@ -43,60 +43,69 @@ public interface DAPNETAPI {
     Call<List<News>> getNews(@Query("rubricName") String name);
 
     @POST("news")
-    Call<News> postNews(@Query("rubricName") String name, @Body News news);
+    Call<News> postNews(@Body News news);
 
     //NodeResource
     //Call without name to get all nodes
+    @GET("nodes/")
+    Call<List<Node>> getAllNodes();
     @GET("nodes/{name}")
-    Call<List<Node>> getNode(@Path("name") String name);
-
+    Call<Node> getNode(@Path("name") String name);
     @PUT("nodes/{name}")
     Call<Node> putNode(@Path("name") String name, @Body Node node);
 
     @DELETE("nodes/{name}")
-    Call<Node> deleteNode(@Path("name") String name);
+    Call<Void> deleteNode(@Path("name") String name);
 
     //RubricResource
     //Call without name to get all rubrics
+    @GET("rubrics/")
+    Call<List<Rubric>> getAllRubrics();
     @GET("rubrics/{name}")
-    Call<List<Rubric>> getRubric(@Path("name") String name);
+    Call<Rubric> getRubric(@Path("name") String name);
 
     @PUT("rubrics/{name}")
     Call<Rubric> putRubric(@Path("name") String name, @Body Rubric rubric);
 
     @DELETE("rubrics/{name}")
-    Call<Rubric> deleteRubric(@Path("name") String name);
+    Call<Void> deleteRubric(@Path("name") String name);
 
 
     //TransmitterGroupResource
+    @GET("transmitterGroups/")
+    Call<List<TransmitterGroup>> getAllTransmitterGroups();
     @GET("transmitterGroups/{name}")
-    Call<List<TransmitterGroup>> getTransmitterGroup(@Path("name") String name);
+    Call<TransmitterGroup> getTransmitterGroup(@Path("name") String name);
 
     @PUT("transmitterGroups/{name}")
     Call<TransmitterGroup> putTransmitterGroup(@Path("name") String name, @Body TransmitterGroup transmitterGroup);
 
     @DELETE("transmitterGroups/{name}")
-    Call<TransmitterGroup> deleteTransmitterGroup(@Path("name") String name);
+    Call<Void> deleteTransmitterGroup(@Path("name") String name);
 
     //TransmitterResource
+    @GET("transmitters/")
+    Call<List<Transmitter>> getAllTransmitters();
     @GET("transmitters/{name}")
-    Call<List<Transmitter>> getTransmitter(@Path("name") String name);
+    Call<Transmitter> getTransmitter(@Path("name") String name);
 
     @PUT("transmitters/{name}")
     Call<Transmitter> putTransmitter(@Path("name") String name, @Body Transmitter transmitter);
 
     @DELETE("transmitters/{name}")
-    Call<Transmitter> deleteTransmitter(@Path("name") String name);
+    Call<Void> deleteTransmitter(@Path("name") String name);
 
     //UserResource
+    @GET("users")
+    Call<List<User>> getAllUsers();
     @GET("users/{name}")
-    Call<List<User>> getUser(@Path("name") String name);
+    Call<User> getUser(@Path("name") String name);
 
     @PUT("users/{name}")
     Call<User> putUser(@Path("name") String name, @Body User user);
 
     @DELETE("users/{name}")
-    Call<User> deleteUser(@Path("name") String name);
+    Call<Void> deleteUser(@Path("name") String name);
 
 
     //TransmitterControl, according to WADL?
