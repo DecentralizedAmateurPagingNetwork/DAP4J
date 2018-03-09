@@ -2,11 +2,12 @@ package de.hampager.dap4j;
 
 public class DapnetSingleton {
     private static DAPNETAPI service;
+    private static DAPNET dapnet;
     private static DapnetSingleton uniqueDapnet;
     private static String url = "http://hampager.de/api/";
     private static String user = "";
     private static String pass = "";
-
+    
     // verhinderte Instanziierung von außen.
     private DapnetSingleton() {
     }
@@ -31,6 +32,7 @@ public class DapnetSingleton {
         DapnetSingleton.url = url;
         DapnetSingleton.user = user;
         DapnetSingleton.pass = pass;
+        DapnetSingleton.dapnet = new DAPNET(DapnetSingleton.service);
     }
 
     public DAPNETAPI getService() {
@@ -47,5 +49,9 @@ public class DapnetSingleton {
 
     public String getPass() {
         return DapnetSingleton.pass;
+    }
+
+    public DAPNET getDapnet() {
+        return DapnetSingleton.dapnet;
     }
 }

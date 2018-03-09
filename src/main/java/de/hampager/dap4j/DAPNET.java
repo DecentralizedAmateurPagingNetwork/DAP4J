@@ -10,8 +10,11 @@ import retrofit2.Response;
 import java.util.List;
 
 public class DAPNET {
-    private DAPNETAPI service = DapnetSingleton.getInstance().getService();
+    private DAPNETAPI service;
 
+    public DAPNET(DAPNETAPI service) {
+        this.service = service;
+    }
     private <E> void genericConnection(Call<E> call, final DapnetListener<E> listener) {
         call.enqueue(new Callback<E>() {
             @Override
