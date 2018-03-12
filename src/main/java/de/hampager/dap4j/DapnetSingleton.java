@@ -29,6 +29,7 @@ public class DapnetSingleton {
             DapnetSingleton.service = ServiceGenerator.createService(url);
         else
             DapnetSingleton.service = ServiceGenerator.createService(url, user, pass);
+
         DapnetSingleton.url = url;
         DapnetSingleton.user = user;
         DapnetSingleton.pass = pass;
