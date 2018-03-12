@@ -20,7 +20,7 @@ public class ServiceGenerator {
 
     private static HttpLoggingInterceptor logging =
             new HttpLoggingInterceptor()
-                    .setLevel(HttpLoggingInterceptor.Level.BODY);
+                    .setLevel(HttpLoggingInterceptor.Level.HEADERS);
 
     private static OkHttpClient.Builder httpClient =
             new OkHttpClient.Builder();
