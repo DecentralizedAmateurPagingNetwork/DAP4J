@@ -44,6 +44,7 @@ public class ServiceGenerator {
 
     public static <S> S createService(
             Class<S> serviceClass, final String authToken) {
+        httpClient.interceptors().clear();
         if (!isEmpty(authToken)) {
             AuthenticationInterceptor interceptor =
                     new AuthenticationInterceptor(authToken);
