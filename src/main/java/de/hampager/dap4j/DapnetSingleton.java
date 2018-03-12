@@ -25,9 +25,9 @@ public class DapnetSingleton {
     }
 
     public void init(String url, String user, String pass) {
-        if (user.equals("") || pass.equals(""))
-            DapnetSingleton.service = ServiceGenerator.createService(url);
-        else
+        //  if (user.equals("") || pass.equals(""))
+        //     DapnetSingleton.service = ServiceGenerator.createService();
+        //else
             DapnetSingleton.service = ServiceGenerator.createService(url, user, pass);
 
         DapnetSingleton.url = url;
