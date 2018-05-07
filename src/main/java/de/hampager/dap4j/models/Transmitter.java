@@ -1,13 +1,14 @@
 package de.hampager.dap4j.models;
 
+import java.time.Instant;
 import java.util.List;
 
 public class Transmitter {
     private String name;
     private String authKey;
-    private String longitude;
-    private String latitude;
-    private String power;
+    private double longitude;
+    private double latitude;
+    private double power;
     private String nodeName;
     private Address address;
     private String timeSlot;
@@ -19,12 +20,12 @@ public class Transmitter {
     private Integer antennaAboveGroundLevel;
     private String antennaType;
     private Integer antennaDirection;
-    private double antennaGainDbi;
-    private String lastUpdate;
+    private float antennaGainDbi;
+    private Instant lastUpdate;
     private String usage;
     private Integer identificationAddress;
-    private String lastConnected;
-    private String connectedSince;
+    private Instant lastConnected;
+    private Instant connectedSince;
 
     public String getName() {
         return name;
@@ -42,27 +43,27 @@ public class Transmitter {
         this.authKey = authKey;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public String getPower() {
+    public double getPower() {
         return power;
     }
 
-    public void setPower(String power) {
+    public void setPower(double power) {
         this.power = power;
     }
 
@@ -158,15 +159,15 @@ public class Transmitter {
         return antennaGainDbi;
     }
 
-    public void setAntennaGainDbi(double antennaGainDbi) {
+    public void setAntennaGainDbi(float antennaGainDbi) {
         this.antennaGainDbi = antennaGainDbi;
     }
 
-    public String getLastUpdate() {
+    public Instant getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(String lastUpdate) {
+    public void setLastUpdate(Instant lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -186,19 +187,19 @@ public class Transmitter {
         this.identificationAddress = identificationAddress;
     }
 
-    public String getLastConnected() {
+    public Instant getLastConnected() {
         return lastConnected;
     }
 
-    public void setLastConnected(String lastConnected) {
+    public void setLastConnected(Instant lastConnected) {
         this.lastConnected = lastConnected;
     }
 
-    public String getConnectedSince() {
+    public Instant getConnectedSince() {
         return connectedSince;
     }
 
-    public void setConnectedSince(String connectedSince) {
+    public void setConnectedSince(Instant connectedSince) {
         this.connectedSince = connectedSince;
     }
 
