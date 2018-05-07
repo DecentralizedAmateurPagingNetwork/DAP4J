@@ -1,6 +1,5 @@
 package de.hampager.dap4j.models;
 
-import java.time.Instant;
 import java.util.List;
 
 public class Transmitter {
@@ -21,11 +20,11 @@ public class Transmitter {
     private String antennaType;
     private Integer antennaDirection;
     private float antennaGainDbi;
-    private Instant lastUpdate;
+    private String lastUpdate;
     private String usage;
     private Integer identificationAddress;
-    private Instant lastConnected;
-    private Instant connectedSince;
+    private String lastConnected;
+    private String connectedSince;
 
     public String getName() {
         return name;
@@ -163,11 +162,11 @@ public class Transmitter {
         this.antennaGainDbi = antennaGainDbi;
     }
 
-    public Instant getLastUpdate() {
+    public String getLastUpdate() {
         return lastUpdate;
     }
 
-    public void setLastUpdate(Instant lastUpdate) {
+    public void setLastUpdate(String lastUpdate) {
         this.lastUpdate = lastUpdate;
     }
 
@@ -187,19 +186,19 @@ public class Transmitter {
         this.identificationAddress = identificationAddress;
     }
 
-    public Instant getLastConnected() {
+    public String getLastConnected() {
         return lastConnected;
     }
 
-    public void setLastConnected(Instant lastConnected) {
+    public void setLastConnected(String lastConnected) {
         this.lastConnected = lastConnected;
     }
 
-    public Instant getConnectedSince() {
+    public String getConnectedSince() {
         return connectedSince;
     }
 
-    public void setConnectedSince(Instant connectedSince) {
+    public void setConnectedSince(String connectedSince) {
         this.connectedSince = connectedSince;
     }
 
