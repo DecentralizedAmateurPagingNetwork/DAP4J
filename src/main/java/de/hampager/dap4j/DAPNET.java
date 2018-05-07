@@ -11,7 +11,8 @@ import java.util.List;
 
 public class DAPNET {
     private DAPNETAPI service;
-
+    private DAPNETAPI fallbackService;
+    private DAPNET fallbackDapnet;
     public DAPNET(DAPNETAPI service) {
         this.service = service;
     }
@@ -24,9 +25,16 @@ public class DAPNET {
 
             @Override
             public void onFailure(Call<E> call, Throwable t) {
-                listener.onFailure(t);
+
+                if (!fallbackDapnet.CheckCall(call))
+                    listener.onFailure(t);
             }
         });
+    }
+
+    <E> boolean CheckCall(Call<E> call) {
+        boolean ret = false;
+        return ret;
     }
 
     //
@@ -34,6 +42,7 @@ public class DAPNET {
         Call<Activation> call = service.postActivation(activation);
         genericConnection(call, listener);
     }
+
 
     //
     public void getAllCallSigns(final DapnetListener<List<CallSign>> listener) {

@@ -3,8 +3,11 @@ package de.hampager.dap4j;
 public class DapnetSingleton {
     private static DAPNETAPI service;
     private static DAPNET dapnet;
+    private static DAPNETAPI fallbackService;
+    private static DAPNET fallbackDapnet;
     private static DapnetSingleton uniqueDapnet;
     private static String url = "http://hampager.de/api/";
+    private static String fallbackUrl = "db0sda.ampr.org:8080";
     private static String user = "";
     private static String pass = "";
 
@@ -28,18 +31,30 @@ public class DapnetSingleton {
         //  if (user.equals("") || pass.equals(""))
         //     DapnetSingleton.service = ServiceGenerator.createService();
         //else
-            DapnetSingleton.service = ServiceGenerator.createService(url, user, pass);
-
+        DapnetSingleton.service = ServiceGenerator.createService(url, user, pass);
+        DapnetSingleton.fallbackService = ServiceGenerator.createService(fallbackUrl, user, pass);
         DapnetSingleton.url = url;
         DapnetSingleton.user = user;
         DapnetSingleton.pass = pass;
         DapnetSingleton.dapnet = new DAPNET(DapnetSingleton.service);
+        DapnetSingleton.fallbackDapnet = new DAPNET(DapnetSingleton.fallbackService);
+    }
+
+    DAPNETAPI getFallbackService() {
+        return DapnetSingleton.fallbackService;
+    }
+
+    DAPNET getFallbackDapnet() {
+        return DapnetSingleton.fallbackDapnet;
     }
 
     public DAPNETAPI getService() {
         return DapnetSingleton.service;
     }
 
+    public DAPNET getDapnet() {
+        return DapnetSingleton.dapnet;
+    }
     public String getUrl() {
         return DapnetSingleton.url;
     }
@@ -52,7 +67,5 @@ public class DapnetSingleton {
         return DapnetSingleton.pass;
     }
 
-    public DAPNET getDapnet() {
-        return DapnetSingleton.dapnet;
-    }
+
 }
