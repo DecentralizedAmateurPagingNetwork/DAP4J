@@ -19,7 +19,7 @@ public class Transmitter {
     private Integer antennaAboveGroundLevel;
     private String antennaType;
     private Integer antennaDirection;
-    private Integer antennaGainDbi;
+    private double antennaGainDbi;
     private String lastUpdate;
     private String usage;
     private Integer identificationAddress;
@@ -154,11 +154,11 @@ public class Transmitter {
         this.antennaDirection = antennaDirection;
     }
 
-    public Integer getAntennaGainDbi() {
+    public double getAntennaGainDbi() {
         return antennaGainDbi;
     }
 
-    public void setAntennaGainDbi(Integer antennaGainDbi) {
+    public void setAntennaGainDbi(double antennaGainDbi) {
         this.antennaGainDbi = antennaGainDbi;
     }
 
