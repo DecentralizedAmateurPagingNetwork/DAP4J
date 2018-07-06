@@ -57,7 +57,7 @@ public class DAPNET {
 
     // call without name to get whole List
     public void getCalls(String name, final DapnetListener<List<CallResource>> listener) {
-        Call<List<CallResource>> call = service.getCalls("");
+        Call<List<CallResource>> call = service.getCalls(name);
         genericConnection(call, listener);
     }
 
