@@ -30,8 +30,8 @@ public interface DAPNETAPI {
 
     //CallResource
     //Call without name to get all calls (admin only)
-    @GET("calls/{ownerName}")
-    Call<List<CallResource>> getCalls(@Path("ownerName") String name);
+    @GET("calls")
+    Call<List<CallResource>> getCalls(@Query("ownerName") String name);
 
     @POST("calls")
     Call<CallResource> postCall(@Body CallResource callResource);
