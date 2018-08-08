@@ -68,7 +68,12 @@ public class DAPNET {
 
     // call without name to get whole List
     public void getNews(String name, final DapnetListener<List<News>> listener) {
-        Call<List<News>> call = service.getNews(name);
+        Call<List<News>> call;
+        if (name == null || name.equals("") || name.equals(" ")) {
+            call = service.getAllNews();
+        } else {
+            call = service.getNews(name);
+        }
         genericConnection(call, listener);
     }
 
