@@ -39,7 +39,7 @@ public interface DAPNETAPI {
 
     //NewsResource
     //Call without name to get all news
-    @GET("news/{rubricName}")
+    @GET("news")
     Call<List<News>> getNews(@Query("rubricName") String name);
 
     @POST("news")
