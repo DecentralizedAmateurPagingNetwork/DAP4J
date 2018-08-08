@@ -42,6 +42,9 @@ public interface DAPNETAPI {
     @GET("news")
     Call<List<News>> getNews(@Query("rubricName") String name);
 
+    @GET("news")
+    Call<List<News>> getAllNews();
+
     @POST("news")
     Call<News> postNews(@Body News news);
 
