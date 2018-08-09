@@ -202,4 +202,28 @@ public class Transmitter {
         this.connectedSince = connectedSince;
     }
 
+    public Transmitter(String name, String authKey, double longitude, double latitude, double power, String nodeName, Address address, String timeSlot, List<String> ownerNames, String deviceType, String deviceVersion, Integer callCount, String status, Integer antennaAboveGroundLevel, String antennaType, Integer antennaDirection, float antennaGainDbi, String lastUpdate, String usage, Integer identificationAddress, String lastConnected, String connectedSince) {
+        this.name = name;
+        this.authKey = authKey;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.power = power;
+        this.nodeName = nodeName;
+        this.address = address;
+        this.timeSlot = timeSlot;
+        this.ownerNames = ownerNames;
+        this.deviceType = deviceType;
+        this.deviceVersion = deviceVersion;
+        this.callCount = callCount;
+        this.status = status;
+        this.antennaAboveGroundLevel = antennaAboveGroundLevel;
+        this.antennaType = antennaType;
+        this.antennaDirection = antennaDirection;
+        this.antennaGainDbi = antennaGainDbi;
+        this.lastUpdate = lastUpdate;
+        this.usage = usage;
+        this.identificationAddress = identificationAddress;
+        this.lastConnected = lastConnected;
+        this.connectedSince = connectedSince;
+    }
 }
