@@ -1,5 +1,7 @@
 package de.hampager.dap4j.models;
 
+import java.security.acl.Owner;
+
 public class Node {
 
     private String name;
@@ -8,6 +10,43 @@ public class Node {
     private Address address;
     private String status;
     private String key;
+
+    private String version;
+    private Owner owner;
+
+    public Node(String name, String longitude, String latitude, Address address, String status, String key, Owner ownerNames, String version) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.address = address;
+        this.status = status;
+        this.key = key;
+        this.owner = ownerNames;
+        this.version = version;
+    }
+
+    public Node(String name, String longitude, String latitude, String status, String key, Owner ownerNames, String version) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.status = status;
+        this.key = key;
+        this.owner = ownerNames;
+        this.version = version;
+    }
+
+    public Node(String name, String longitude, String latitude, String status, Owner ownerNames, String version) {
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.status = status;
+        this.owner = ownerNames;
+        this.version = version;
+    }
+
+    public String getVersion() {
+        return version;
+    }
 
     public String getName() {
         return name;
@@ -57,27 +96,15 @@ public class Node {
         this.key = key;
     }
 
-    public Node(String name, String longitude, String latitude, Address address, String status, String key) {
-        this.name = name;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.address = address;
-        this.status = status;
-        this.key = key;
+    public void setVersion(String version) {
+        this.version = version;
     }
 
-    public Node(String name, String longitude, String latitude, String status, String key) {
-        this.name = name;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.status = status;
-        this.key = key;
+    public Owner getOwner() {
+        return owner;
     }
 
-    public Node(String name, String longitude, String latitude, String status) {
-        this.name = name;
-        this.longitude = longitude;
-        this.latitude = latitude;
-        this.status = status;
+    public void setOwner(Owner owner) {
+        this.owner = owner;
     }
 }
