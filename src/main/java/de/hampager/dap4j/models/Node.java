@@ -29,7 +29,7 @@ public class Node implements Serializable {
     private List<String> ownerNames = null;
     @SerializedName("version")
     @Expose
-    private Object version;
+    private String version;
 
     /**
      * No args constructor for use in serialization
@@ -46,7 +46,7 @@ public class Node implements Serializable {
      * @param ownerNames
      * @param version
      */
-    public Node(String name, String longitude, String latitude, Object address, String status, List<String> ownerNames, Object version) {
+    public Node(String name, String longitude, String latitude, Object address, String status, List<String> ownerNames, String version) {
         super();
         this.name = name;
         this.longitude = longitude;
@@ -105,11 +105,11 @@ public class Node implements Serializable {
         this.ownerNames = ownerNames;
     }
 
-    public Object getVersion() {
+    public String getVersion() {
         return version;
     }
 
-    public void setVersion(Object version) {
+    public void setVersion(String version) {
         this.version = version;
     }
 
