@@ -20,7 +20,7 @@ public class Node implements Serializable {
     private String latitude;
     @SerializedName("address")
     @Expose
-    private Object address;
+    private Address address;
     @SerializedName("status")
     @Expose
     private String status;
@@ -46,12 +46,33 @@ public class Node implements Serializable {
      * @param ownerNames
      * @param version
      */
-    public Node(String name, String longitude, String latitude, Object address, String status, List<String> ownerNames, String version) {
+    public Node(String name, String longitude, String latitude, Address address, String status, List<String> ownerNames, String version) {
         super();
         this.name = name;
         this.longitude = longitude;
         this.latitude = latitude;
         this.address = address;
+        this.status = status;
+        this.ownerNames = ownerNames;
+        this.version = version;
+    }
+
+    /**
+     * @param status
+     * @param ipaddr
+     * @param port
+     * @param name
+     * @param longitude
+     * @param latitude
+     * @param ownerNames
+     * @param version
+     */
+    public Node(String name, String longitude, String latitude, String ipaddr, int port, String status, List<String> ownerNames, String version) {
+        super();
+        this.name = name;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.address = new Address(ipaddr, port);
         this.status = status;
         this.ownerNames = ownerNames;
         this.version = version;
@@ -85,7 +106,7 @@ public class Node implements Serializable {
         return address;
     }
 
-    public void setAddress(Object address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 
