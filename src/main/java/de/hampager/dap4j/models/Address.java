@@ -25,4 +25,12 @@ public class Address {
         this.ipAddr = ipAddr;
         this.port = port;
     }
+
+    public Address() {
+    }
+
+    @Override
+    public String toString() {
+        return ipAddr + ':' + port;
+    }
 }
