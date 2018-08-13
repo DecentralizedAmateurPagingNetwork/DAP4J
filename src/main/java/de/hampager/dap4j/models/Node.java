@@ -102,7 +102,7 @@ public class Node implements Serializable {
         this.latitude = latitude;
     }
 
-    public Object getAddress() {
+    public Address getAddress() {
         return address;
     }
 
