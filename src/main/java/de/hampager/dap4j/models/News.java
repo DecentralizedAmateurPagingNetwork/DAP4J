@@ -1,11 +1,26 @@
 package de.hampager.dap4j.models;
 
-public class News {
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class News implements Serializable {
+    private final static long serialVersionUID = 6193971714890413970L;
+    @SerializedName("text")
+    @Expose
     private String text;
+    @SerializedName("rubricName")
+    @Expose
     private String rubricName;
+    @SerializedName("number")
+    @Expose
     private Integer number;
+    @SerializedName("timestamp")
+    @Expose
     private String timestamp;
+    @SerializedName("ownerName")
+    @Expose
     private String ownerName;
 
     public String getText() {
@@ -48,17 +63,4 @@ public class News {
         this.ownerName = ownerName;
     }
 
-    public News(String text, String rubricName, Integer number, String timestamp, String ownerName) {
-        this.text = text;
-        this.rubricName = rubricName;
-        this.number = number;
-        this.timestamp = timestamp;
-        this.ownerName = ownerName;
-    }
-
-    public News(String text, String rubricName, Integer number) {
-        this.text = text;
-        this.rubricName = rubricName;
-        this.number = number;
-    }
 }
