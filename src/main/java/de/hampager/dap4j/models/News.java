@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class News implements Serializable {
-    private final static long serialVersionUID = 6193971714890413970L;
+    private static final long serialVersionUID = 6193971714890413970L;
     @SerializedName("text")
     @Expose
     private String text;

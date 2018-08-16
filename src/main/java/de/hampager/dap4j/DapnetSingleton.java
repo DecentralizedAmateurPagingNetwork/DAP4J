@@ -7,7 +7,7 @@ public class DapnetSingleton {
     private static String url = "http://hampager.de/api/";
     private static String user = "";
     private static String pass = "";
-    private static final boolean admin = false;
+    private static final boolean ADMIN = false;
 
     // verhinderte Instanziierung von außen.
     private DapnetSingleton() {
@@ -26,11 +26,7 @@ public class DapnetSingleton {
     }
 
     public void init(String url, String user, String pass) {
-        //  if (user.equals("") || pass.equals(""))
-        //     DapnetSingleton.service = ServiceGenerator.createService();
-        //else
-            DapnetSingleton.service = ServiceGenerator.createService(url, user, pass);
-
+        DapnetSingleton.service = ServiceGenerator.createService(url, user, pass);
         DapnetSingleton.url = url;
         DapnetSingleton.user = user;
         DapnetSingleton.pass = pass;
@@ -58,6 +54,6 @@ public class DapnetSingleton {
     }
 
     public boolean isAdmin() {
-        return DapnetSingleton.admin;
+        return DapnetSingleton.ADMIN;
     }
 }
