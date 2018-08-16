@@ -5,6 +5,7 @@ public class APIError {
     private String message;
 
     public APIError() {
+        //TODO: Implement Error
     }
 
     public int status() {

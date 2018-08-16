@@ -7,7 +7,7 @@ public class DapnetSingleton {
     private static String url = "http://hampager.de/api/";
     private static String user = "";
     private static String pass = "";
-    private static boolean admin = false;
+    private static final boolean admin = false;
 
     // verhinderte Instanziierung von außen.
     private DapnetSingleton() {

@@ -11,7 +11,7 @@ public class Transmitter {
     private String nodeName;
     private Address address;
     private String timeSlot;
-    private List<String> ownerNames = null;
+    private List<String> ownerNames;
     private String deviceType;
     private String deviceVersion;
     private Integer callCount;

@@ -10,7 +10,7 @@ import retrofit2.Response;
 import java.util.List;
 
 public class DAPNET {
-    private DAPNETAPI service;
+    private final DAPNETAPI service;
 
     public DAPNET(DAPNETAPI service) {
         this.service = service;

@@ -18,11 +18,11 @@ public class ServiceGenerator {
 
     //private static Retrofit retrofit = builder.build();
 
-    private static HttpLoggingInterceptor logging =
+    private static final HttpLoggingInterceptor logging =
             new HttpLoggingInterceptor()
                     .setLevel(HttpLoggingInterceptor.Level.HEADERS);
 
-    private static OkHttpClient.Builder httpClient =
+    private static final OkHttpClient.Builder httpClient =
             new OkHttpClient.Builder();
 
 
@@ -33,8 +33,8 @@ public class ServiceGenerator {
 
     public static <S> S createService(
             Class<S> serviceClass, String username, String password) {
-        if (!isEmpty(username)
-                && !isEmpty(password)) {
+        if (isNotEmpty(username)
+                && isNotEmpty(password)) {
             String authToken = Credentials.basic(username, password);
             return createService(serviceClass, authToken);
         }
@@ -45,7 +45,7 @@ public class ServiceGenerator {
     public static <S> S createService(
             Class<S> serviceClass, final String authToken) {
         httpClient.interceptors().clear();
-        if (!isEmpty(authToken)) {
+        if (isNotEmpty(authToken)) {
             AuthenticationInterceptor interceptor =
                     new AuthenticationInterceptor(authToken);
 
@@ -93,8 +93,9 @@ public class ServiceGenerator {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(apiBaseUrl);
     }
-    private static boolean isEmpty(CharSequence str) {
-        return str == null || str.length() == 0;
+
+    private static boolean isNotEmpty(CharSequence str) {
+        return str != null && str.length() != 0;
     }
 
 }
